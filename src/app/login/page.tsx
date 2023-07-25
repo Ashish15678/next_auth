@@ -9,7 +9,7 @@ export default function loginPage() {
   const router = useRouter();
   const [user, setUser] = useState({
     password: "",
-    username: "",
+    email: "",
   });
   const [buttonDisabled, setButtonDisabled] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -29,7 +29,7 @@ export default function loginPage() {
     }
   };
   useEffect(() => {
-    if (user.username.length > 0 && user.password.length > 0) {
+    if (user.email.length > 0 && user.password.length > 0) {
       setButtonDisabled(false);
     } else {
       setButtonDisabled(true);
@@ -41,14 +41,14 @@ export default function loginPage() {
       <h1>Log-in Page</h1>
       <hr />
 
-      <label htmlFor="username">UserName</label>
+      <label htmlFor="email">email</label>
       <input
         type="text"
         name=""
-        placeholder="username"
+        placeholder="email"
         className="p-2 border text-black  border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
-        value={user.username}
-        onChange={(e) => setUser({ ...user, username: e.target.value })}
+        value={user.email}
+        onChange={(e) => setUser({ ...user, email: e.target.value })}
       />
       <br />
 
